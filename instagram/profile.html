@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+    .main-profile {
+        position: relative;
+        left: 22%;
+        width: 75%;
+        overflow: hidden;
+    }
+
+    .top-profile {
+        display: flex;
+        margin-top: 5%;
+    }
+
+    .profile-image {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin-left: 10%;
+    }
+
+    .profile-image img {
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        margin-top: 15%;
+    }
+
+    .profile-details {
+        padding-left: 8%;
+    }
+
+    .profile-details img {
+        width: 20px;
+        height: auto;
+        object-fit: cover;
+        mix-blend-mode: difference;
+    }
+
+    .profile-name {
+        display: flex;
+        gap: 15px;
+    }
+
+    .profile-name h1 {
+        font-size: 20px;
+        font-weight: 300;
+    }
+
+    .profile-name a button {
+        text-decoration: none;
+        color: #fff;
+        font-size: 12px;
+        font-weight: 500;
+        background-color: #262626;
+        border-radius: 5px;
+        text-transform: capitalize;
+        padding: 8px 15px;
+        outline: none;
+        border: none;
+    }
+
+    .profile-follow {
+        margin-top: 20px;
+    }
+
+    .profile-follow span {
+
+        text-transform: capitalize;
+        padding-right: 15px;
+        font-size: 14px;
+    }
+
+    .des-profile {
+        margin-top: 5%;
+    }
+
+    .des-profile h5 {
+        font-size: 14px;
+        font-weight: 500;
+        text-transform: capitalize;
+    }
+
+    .des-profile h6 {
+        color: #e9e7e78e;
+        font-weight: 300;
+        font-size: 12px;
+        text-transform: capitalize;
+        ;
+    }
+
+    .des-profile p {
+        color: #fff;
+        font-size: 12px;
+    }
+
+    .des-profile span {
+
+        color: #fff;
+        font-size: 12px;
+    }
+
+    .des-profile span a {
+        text-decoration: none;
+        color: #0569ac;
+    }
+
+    .des-profile small {
+        color: #e9e7e78e;
+        font-size: 10px;
+    }
+
+    .des-profile small span {
+        font-size: 10px;
+    }
+
+    .highlight {
+        margin-top: 8%;
+        width: 100%;
+        height: 125px;
+        display: flex;
+        gap: 40px;
+        margin-left: 10%;
+    }
+
+    .highlight-img {
+        width: 80px;
+        height: 80px;
+        text-align: center;
+    }
+
+    .highlight-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 2px solid #262626;
+    }
+
+    .mainpost {
+        width: 100%;
+        height: 100%;
+        border-top: 1px solid #262626;
+        border-bottom: 0px;
+    }
+
+    .nav-post {
+        width: 100%;
+    }
+
+    .nav-post ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        list-style: none;
+        gap: 30px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .nav-post ul li {
+        text-transform: capitalize;
+        font-size: 15px;
+        font-weight: 400;
+        color: #e9e7e78e;
+        cursor: pointer;
+    }
+
+    .nav-post .active {
+        color: #fff;
+    }
+
+    .contant {
+        display: none;
+    }
+   
+    .post-contant .showpost{
+        display: block;
+    }
+
+    .main-image-post {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        margin-top: 10px;
+    }
+
+    .Imagepost {
+        width: 30%;
+        height: 300px;
+        position: relative;
+    }
+
+    .hover-img {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.486);
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: all 0.2s linear;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    .Imagepost img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .Imagepost:hover .hover-img {
+        opacity: 1;
+    }
+
+    .hover-img .fa-heart{
+        padding-inline: 10px;
+    }
+
+    .fa-comment {
+        padding-inline: 10px;
+    }
+</style>
+
+<body>
+
+
+    <section id="Leftt">
+        <div class="left">
+            <div class="logo">
+             <a href="index.html"><h1>Instagram</h1></a>
+            </div>
+            <div class="navbar">
+                <ul>
+                    <li> <i class="fa-regular fa-heart"></i> home</li>
+                    <li><i class="fa-solid fa-magnifying-glass"></i> search</li>
+                    <li><i class="fa-regular fa-compass"></i> explore</li>
+                    <li><i class="fa-regular fa-circle-play"></i> reel</li>
+                    <li><i class="fa-regular fa-message"></i> message</li>
+                    <li><i class="fa-regular fa-heart"></i> notification</li>
+                    <li><i class="fa-regular fa-square-plus"></i> create</li>
+                    <li><i class="fa-regular fa-circle"></i> profile</li>
+                    <li><i class="fa-solid fa-bars"></i> more</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <div class="main-profile">
+        <div class="top-profile">
+            <div class="profile-image">
+                <img src="https://images.unsplash.com/photo-1633187841127-8b3e776b6a41?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGdhbmdzdGVyfGVufDB8fDB8fHww"
+                    alt="">
+            </div>
+            <div class="profile-details">
+                <div class="profile-name">
+                    <h1>john wick</h1>
+                    <a href=""><button>edit profile</button></a>
+                    <a href=""><button>view archive</button></a>
+                    <a href=""><img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS667Sujuiez4E6YGSoAiBUsusI4gI2SmwZFAGWLgmmWg&s"
+                            alt=""></a>
+                </div>
+                <div class="profile-follow">
+                    <span>13 posts</span>
+                    <span>1.3 m followers</span>
+                    <span>69 following</span>
+                </div>
+                <div class="des-profile">
+                    <h5>jhon wick</h5>
+                    <h6>gangster</h6>
+                    <p>-It’s gonna take more than a human to stop me from where I’m meant to be.</p>
+                    <span>managment <a href="">@hamza_khan</a></span>
+                    <br>
+                    <small>followed by <span>shahoodsheikh</span>and <span>yasirkhan</span> </small>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="highlight">
+            <div class="highlight-img">
+                <img src="https://images.unsplash.com/flagged/photo-1561203490-32588f5555c2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDZ8fGJveSUyMGZlc3RpdmFsfGVufDB8fDB8fHww"
+                    alt="">
+                <h6>alot of me✨</h6>
+            </div>
+            <div class="highlight-img">
+                <img src="https://images.unsplash.com/flagged/photo-1561203490-062f3051d6d7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTF8fGJveSUyMGZlc3RpdmFsfGVufDB8fDB8fHww"
+                    alt="">
+                <h6>festival🎻</h6>
+            </div>
+            <div class="highlight-img">
+                <img src="https://images.unsplash.com/photo-1565614693087-6273f9771ef7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjR8fGJveSUyMGZlc3RpdmFsfGVufDB8fDB8fHww"
+                    alt="">
+                <h6>forest🌳</h6>
+            </div>
+        </div>
+
+        <div class="mainpost">
+
+            <div class="nav-post">
+                <ul>
+                    <li class="active navpost">post</li>
+                    <li class="navpost">reels</li>
+                    <li class="navpost">tagged</li>
+                </ul>
+            </div>
+
+         <div class="hamza">
+            <div class="post-contant" id="post_contant">
+                <div class="contant showpost">
+                    <div class="main-image-post">
+                        <div class="Imagepost">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6DOk7uKNt9csa-EAMnxVezm3opDYGa60YbiDyrFyuEg&s"
+                                alt="">
+                            <div class="hover-img">
+                                <i class="fa-solid fa-heart"></i>1.1M
+                                <i class="fa-solid fa-comment"> </i>12,4k
+                            </div>
+                        </div>
+                        <div class="Imagepost">
+                            <img src="https://people.com/thmb/ypazA7YKV4H3-VAhSBcQlNvrGtg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(979x132:981x134)/Keanu-Reeves-John-Wick-111022-01-a824163fc201439cbc5c417910f602be.jpg"
+                                alt="">
+                            <div class="hover-img">
+                                <i class="fa-solid fa-heart"></i>1.1M
+                                <i class="fa-solid fa-comment"> </i>12,4k
+                            </div>
+                        </div>
+                        <div class="Imagepost">
+                            <img src="https://images.unsplash.com/photo-1624972699570-81ce254b3141?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Ym95JTIwcG9zZXxlbnwwfHwwfHx8MA%3D%3D"
+                                alt="">
+                            <div class="hover-img">
+                                <i class="fa-solid fa-heart"></i>1.1M
+                                <i class="fa-solid fa-comment"> </i>12,4k
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-image-post">
+                        <div class="Imagepost">
+                            <img src="https://images.unsplash.com/photo-1555001976-a21a695c426e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fGJveSUyMHBvc2V8ZW58MHx8MHx8fDA%3D"
+                                alt="">
+                            <div class="hover-img">
+                                <i class="fa-solid fa-heart"></i>1.1M
+                                <i class="fa-solid fa-comment"> </i>12,4k
+                            </div>
+                        </div>
+                        <div class="Imagepost">
+                            <img src="https://images.unsplash.com/photo-1553859943-a02c5418b798?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGJveSUyMHBvc2V8ZW58MHx8MHx8fDA%3D"
+                                alt="">
+                            <div class="hover-img">
+                                <i class="fa-solid fa-heart"></i>1.1M
+                                <i class="fa-solid fa-comment"> </i>12,4k
+                            </div>
+                        </div>
+                        <div class="Imagepost">
+                            <img src="https://images.unsplash.com/photo-1602580849762-4f18739d66e8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGJveSUyMHBvc2V8ZW58MHx8MHx8fDA%3D"
+                                alt="">
+                            <div class="hover-img">
+                                <i class="fa-solid fa-heart"></i>1.1M
+                                <i class="fa-solid fa-comment"> </i>12,4k
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="post-contant" id="post_contant">
+                <div class="contant">
+                    <div class="main-image-post">
+                        <div class="Imagepost">
+                            <img src="https://images.unsplash.com/photo-1517271710308-aa99f1519490?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDZ8fG1hZmlhfGVufDB8fDB8fHww"
+                                alt="">
+                            <div class="hover-img">
+                                <i class="fa-solid fa-heart"></i>1.1M
+                                <i class="fa-solid fa-comment"> </i>12,4k
+                            </div>
+                        </div>
+                        <div class="Imagepost">
+                            <img src="https://images.unsplash.com/photo-1626214445294-aa3823d844a2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fG1hZmlhfGVufDB8fDB8fHww"
+                                alt="">
+                            <div class="hover-img">
+                                <i class="fa-solid fa-heart"></i>1.1M
+                                <i class="fa-solid fa-comment"> </i>12,4k
+                            </div>
+                        </div>
+                        <div class="Imagepost">
+                            <img src="https://images.unsplash.com/photo-1612224795160-87ae0f932322?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzB8fG1hZmlhfGVufDB8fDB8fHww"
+                                alt="">
+                            <div class="hover-img">
+                                <i class="fa-solid fa-heart"></i>1.1M
+                                <i class="fa-solid fa-comment"> </i>12,4k
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-image-post">
+                        <div class="Imagepost">
+                            <img src="https://images.unsplash.com/photo-1618498082002-88f828b0f1ed?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fG1hZmlhfGVufDB8fDB8fHww"
+                                alt="">
+                            <div class="hover-img">
+                                <i class="fa-solid fa-heart"></i>1.1M
+                                <i class="fa-solid fa-comment"> </i>12,4k
+                            </div>
+                        </div>
+                        <div class="Imagepost">
+                            <img src="https://images.unsplash.com/photo-1537221429104-4340bc424e39?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG1hZmlhfGVufDB8fDB8fHww"
+                                alt="">
+                            <div class="hover-img">
+                                <i class="fa-solid fa-heart"></i>1.1M
+                                <i class="fa-solid fa-comment"> </i>12,4k
+                            </div>
+                        </div>
+                        <div class="Imagepost">
+                            <img src="https://images.unsplash.com/photo-1596181989198-213069113a6a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Ym95JTIwZ2FuZ3N0ZXIlMjBsb29rfGVufDB8fDB8fHww"
+                                alt="">
+                            <div class="hover-img">
+                                <i class="fa-solid fa-heart"></i>1.1M
+                                <i class="fa-solid fa-comment"> </i>12,4k
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+            <div class="post-contant" id="post_contant">
+                <div class="contant">
+                    <div class="main-image-post">
+                        <div class="Imagepost">
+                            <img src="https://images.unsplash.com/photo-1632119653689-2b0d6a70515d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Z2lybCUyMGFuZCUyMGJveXxlbnwwfHwwfHx8MA%3D%3D"
+                                alt="">
+                            <div class="hover-img">
+                                <i class="fa-solid fa-heart"></i>1.1M
+                                <i class="fa-solid fa-comment"> </i>12,4k
+                            </div>
+                        </div>
+                        <div class="Imagepost">
+                            <img src="https://images.unsplash.com/photo-1512141633501-8eb74114f568?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGdpcmwlMjBhbmQlMjBib3l8ZW58MHx8MHx8fDA%3D"
+                                alt="">
+                            <div class="hover-img">
+                                <i class="fa-solid fa-heart"></i>1.1M
+                                <i class="fa-solid fa-comment"> </i>12,4k
+                            </div>
+                        </div>
+                        <div class="Imagepost">
+                            <img src="https://images.unsplash.com/photo-1618655108396-ce1ba6c80b7d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGdpcmwlMjBhbmQlMjBib3l8ZW58MHx8MHx8fDA%3D"
+                                alt="">
+                            <div class="hover-img">
+                                <i class="fa-solid fa-heart"></i>1.1M
+                                <i class="fa-solid fa-comment"> </i>12,4k
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-image-post">
+                        <div class="Imagepost">
+                            <img src="https://images.unsplash.com/photo-1550155864-3033f844da36?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fGdpcmwlMjBhbmQlMjBib3l8ZW58MHx8MHx8fDA%3D"
+                                alt="">
+                            <div class="hover-img">
+                                <i class="fa-solid fa-heart"></i>1.1M
+                                <i class="fa-solid fa-comment"> </i>12,4k
+                            </div>
+                        </div>
+                        <div class="Imagepost">
+                            <img src="https://images.unsplash.com/photo-1603401740347-dc340113440f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTJ8fGdpcmwlMjBhbmQlMjBib3l8ZW58MHx8MHx8fDA%3D"
+                                alt="">
+                            <div class="hover-img">
+                                <i class="fa-solid fa-heart"></i>1.1M
+                                <i class="fa-solid fa-comment"> </i>12,4k
+                            </div>
+                        </div>
+                        <div class="Imagepost">
+                            <img src="https://images.unsplash.com/photo-1565489320712-12bcd89be6f6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGJyb3RoZXJob29kfGVufDB8fDB8fHww"
+                                alt="">
+                            <div class="hover-img">
+                                <i class="fa-solid fa-heart"></i>1.1M
+                                <i class="fa-solid fa-comment"> </i>12,4k
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+         </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+<script>
+    let posttabs = document.querySelectorAll(".navpost");
+    let postcontant = document.querySelectorAll(".contant");
+
+    posttabs.forEach((tabs, index) => {
+        tabs.addEventListener("click", function () {
+            posttabs.forEach(tabs => {
+                tabs.classList.remove("active");
+            })
+            tabs.classList.add("active");
+            postcontant.forEach(contant => { contant.classList.remove("showpost")});
+            postcontant[index].classList.add("showpost");
+        })
+    })
+</script>
+
+</html>

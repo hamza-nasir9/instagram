@@ -1,0 +1,551 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel&family=Dancing+Script:wght@400..700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Cinzel&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100%;
+  scroll-behavior: smooth;
+  color: #fff;
+  background-color: #000000;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+}
+
+/* <!-- /////////////////////////////////left section start /////////////////////////////// --> */
+
+#Leftt {
+  width: 20%;
+  height: 100vh;
+  border-right: 1px solid #4b4a4a8e;
+  padding-top: 30px;
+  padding-left: 20px;
+  position: fixed;
+}
+.logo {
+  font-family: "Dancing Script", cursive;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+.logo a {
+  text-decoration: none;
+  color: #fff;
+}
+.navbar {
+  padding-top: 26px;
+}
+.navbar ul {
+  list-style: none;
+  text-transform: capitalize;
+}
+.navbar ul li {
+  padding-block: 15px;
+  font-size: 16px;
+  padding-inline: 8px;
+}
+.navbar a {
+  text-decoration: none;
+  color: #fff;
+}
+.navbar ul li i {
+  padding-right: 10px;
+  font-size: 20px;
+}
+.navbar ul li:hover {
+  background-color: #4b4a4a8e;
+  border-radius: 10px;
+}
+
+/* <!-- /////////////////////////////////left section end /////////////////////////////// --> */
+
+/* <!-- /////////////////////////////////center section start /////////////////////////////// --> */
+
+#Centerr {
+  position: relative;
+  left: 20%;
+  width: 50%;
+}
+.story::-webkit-scrollbar {
+  display: none;
+}
+.story {
+  width: 100%;
+  height: 100px;
+  margin-left: 30px;
+  margin-top: 30px;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+/* .mainfullscreen{
+  position: relative;
+  background-color: #000000ec;
+  width: 100%;
+  height: 100%;
+  display: none;
+} */
+.fullScreen {
+  width: 100%;
+  height: 100%;
+  background-color: #1d1c1cda;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  z-index: 100;
+  display: none;
+}
+.fullactive{
+  display: block;
+}
+.showpicture{
+  width: 30%;
+  height: 100%;
+  margin: 0% auto;
+}
+.fullScreen img{
+  width: 100%;
+  height: 90%;
+  object-fit: cover;
+  position: relative;
+  top: 6%;
+}
+.fa-xmark{
+  font-size: 25px;
+  position: absolute;
+  top: 5%;
+  right: 4%;
+  cursor: pointer;
+}
+.profilestory{
+  position: absolute;
+  top: 7%;
+  left: 35%;
+  z-index: 10;
+}
+.mainstory {
+  display: inline-flex;
+  width: 70px;
+  height: 70px;
+  border: 2px salmon solid;
+  border-radius: 50%;
+  margin-right: 10px;
+  position: relative;
+  cursor: pointer;
+}
+.mainstory span {
+  position: absolute;
+  content: "";
+  top: 103%;
+  z-index: 10;
+  right: 0;
+  padding: 5px;
+  font-size: 10px;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+.storie {
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+.storie img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.mainpost {
+  width: 60%;
+  margin: 4% auto;
+  overflow: hidden;
+  max-height: 950px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #4b4a4a8e;
+}
+.post {
+  width: 100%;
+  position: relative;
+}
+.post-dets-text i {
+  font-size: 11px;
+  color: #119cf7;
+  padding: 0px 3px;
+}
+.post-dets {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+.post-dets img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.post-dets-text {
+  cursor: pointer;
+}
+.post-dets-icons {
+  position: absolute;
+  right: 5%;
+  cursor: pointer;
+}
+.post-img {
+  border: 1px solid #4b4a4a8e;
+  height: 100%;
+  width: 100%;
+  margin-top: 10px;
+}
+.post-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+#postimage {
+  position: relative;
+}
+.imagelike {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  font-size: 50px;
+  opacity: 1;
+  transition: all ease 0.2s;
+}
+.post-about {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#like {
+  background-color: #000000;
+  position: relative;
+  /* display: none; */
+  z-index: 2;
+}
+.showlake {
+  position: absolute;
+  transform: scale(1);
+  bottom: 16.3%;
+  left: 0%;
+  color: rgb(255, 0, 21);
+  padding-left: 5px;
+  transition: all 0.1s ease-in-out;
+}
+.post-like {
+  padding-left: 5px;
+}
+.like {
+  float: left;
+  position: relative;
+  padding: 0px 0px 0px 5px;
+}
+.post-like i {
+  font-size: 22px;
+  padding-right: 15px;
+}
+.post-save {
+  font-size: 22px;
+  margin-top: -65px;
+}
+.post-like span {
+  font-size: 12px;
+  font-weight: 500;
+}
+.post-caption i {
+  font-size: 11px;
+  color: #119cf7;
+  padding: 0px 3px;
+}
+.post-caption h6 {
+  font-size: 13px;
+}
+.post-coment p {
+  color: #c7c5c58e;
+  font-size: 12px;
+  padding-block: 5px;
+}
+.post-coment h6 {
+  font-size: 13px;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.post-coment span {
+  font-weight: 300;
+  font-size: 13px;
+}
+.post-coment input {
+  background: transparent;
+  outline: none;
+  border: none;
+  color: #fff;
+  width: 100%;
+}
+
+/* <!-- /////////////////////////////////center section end /////////////////////////////// -->  */
+
+/* <!-- /////////////////////////////////Right section start /////////////////////////////// --> */
+
+#Rightt {
+  position: absolute;
+  right: 0%;
+  top: 0%;
+  content: "";
+  z-index: 10;
+  width: 27%;
+  height: 100%;
+}
+
+.profile {
+  margin-top: 8%;
+  margin-left: 3%;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.profile-img img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.profile-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 110px;
+}
+
+.profile-text a {
+  text-decoration: none;
+  color: #fff;
+}
+.profile-text h5 {
+  font-weight: 400;
+}
+.profile-text h6 {
+  font-weight: 300;
+  width: 100px;
+}
+.button button {
+  border: none;
+  outline: none;
+  text-decoration: none;
+  color: #119cf7;
+  font-size: 13px;
+  background-color: transparent;
+  cursor: pointer;
+}
+.followingbtn{
+  border: none;
+  outline: none;
+  text-decoration: none;
+  color: #c7c5c58e;
+  font-size: 13px;
+  background-color: transparent;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+#button button {
+  border: none;
+  outline: none;
+  text-decoration: none;
+  color: #119cf7;
+  font-size: 13px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.suggestion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+  margin-top: 20px;
+  width: 92%;
+}
+.suggestion h6 {
+  color: #e9e7e78e;
+  font-size: 12px;
+  font-weight: 300;
+  text-transform: capitalize;
+}
+.suggestion .seeall a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  text-transform: capitalize;
+  font-size: 12px;
+}
+.follwers {
+  padding-left: 10px;
+  padding-top: 10px;
+}
+.follwers .profile {
+  margin-top: 8px;
+}
+.follwers .profile-text h6 {
+  font-size: 10px;
+}
+
+/* <!-- /////////////////////////////////Right section end /////////////////////////////// --> */
+
+/* <!-- /////////////////////////////////popup section start /////////////////////////////// --> */
+
+.main-pop {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: #000000af;
+  z-index: 100;
+  display: none;
+  overflow: hidden;
+}
+.popup {
+  position: absolute;
+  width: 30%;
+  background-color: #262626;
+  height: 50vh;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+  /* display: none; */
+}
+.popadd{
+  display: block;
+}
+.popup-content {
+ 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  width: 30%;
+  background-color: #262626;
+  height: 50vh;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+}
+.pop-img {
+  width: 100px;
+  height: 100px;
+}
+.pop-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.pop-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+.pop-text h5 {
+  padding-block: 4%;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 400;
+}
+.pop-text button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-weight: 700;
+}
+.pop-text .unfollow {
+  color: rgb(247, 72, 72);
+  border-bottom: 1px solid #4b4a4a8e;
+  border-top: 1px solid #4b4a4a8e;
+  width: 100%;
+  padding: 15px 0px;
+  font-size: 15px;
+}
+.cancle {
+  padding: 15px 0px;
+  color: #fff;
+  font-size: 15px;
+}
+
+/* <!-- /////////////////////////////////popup section end /////////////////////////////// --> */
+/* <!-- /////////////////////////////////suggest section start /////////////////////////////// --> */
+
+.suggest {
+  position: relative;
+  left: 35%;
+  margin-top: 5%;
+  width: 40%;
+}
+.suggest h5 {
+  font-size: 15px;
+  font-weight: 500;
+}
+.suggest-profile {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  padding-inline: 10px;
+}
+.suggest-img img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.suggest-img {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.suggest-text h5 {
+  font-size: 13px;
+  font-weight: 500;
+}
+.suggest-text h6 {
+  font-size: 13px;
+  font-weight: 300;
+  color: #c7c5c58e;
+}
+.suggest-text p {
+  font-size: 11px;
+  color: #c7c5c58e;
+}
+.suggest-btn button {
+  background: #119cf7;
+  padding: 8px 20px;
+  border-radius: 8px;
+  color: #fff;
+  border: none;
+  outline: none;
+}
+
+/* <!-- /////////////////////////////////suggest section end /////////////////////////////// --> */
